@@ -1,1 +1,3 @@
-# projeto-taugor
+# projeto-taugor 🗒✏
+
+## Gerenciador de tarefas
