@@ -18,7 +18,7 @@
 <p>O projeto frequentemente pasará por ajustes, como por exemplo, responsividade.</p>
 
 
-<h4>Para acessar o Task Manager entre <a href='https://task-manager-4d9dd.web.app' />aqui</h4>
+<h4>Para acessar o Task Manager entre <a href='https://task-manager-4d9dd.web.app' target='_blank'/>aqui</h4>
 
 
 
