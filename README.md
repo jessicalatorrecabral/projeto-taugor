@@ -1,4 +1,4 @@
-<h1 align="center">Task Manager</h1>
+<h1 align="center">Task Manager 🗒✏</h1>
 
 <p align="center">Task Manager é um simples gerenciador de atividades onde é possível organizar tarefas de trabalho, escola e/ou vida pessoal.</p>
 <h3>Foi desenvolvido com:</h3>
