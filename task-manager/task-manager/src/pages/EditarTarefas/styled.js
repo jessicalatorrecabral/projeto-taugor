@@ -6,7 +6,7 @@ export const ContainerEditarTarefa = styled.div`
     flex-direction: column;
     width: 60%;
     margin: 3rem auto;
-    border: black solid .1rem;
+    border: grey solid .1rem;
     padding: .8rem;
 
     form{
@@ -15,6 +15,12 @@ export const ContainerEditarTarefa = styled.div`
     }
     input{
         width: 80%;
+    }
+
+    @media(max-width: 800px){
+    
+        width: 90%;
+        
     }
 
 
@@ -28,14 +34,30 @@ export const ContainerBotoesEditar = styled.div`
     button {
         width: 30%;
         color: white;
+
+        @media(max-width: 1080px){
+            width: 50%;
+            font-size: 1.2rem;
+        }
     }
     button:nth-child(1){
         background-color: var(--success);
         margin-right: 2.8rem;
+
+        @media(max-width:800px){
+            margin-right: 1rem;
+            
+        }
     }
+
 
     button:nth-child(2){
         background-color: var(--info);
+    }
+
+    @media(max-width: 800px){
+        width: 100%;
+        margin: 3rem auto;
     }
 `
 export const ArquivoContainer = styled.div`

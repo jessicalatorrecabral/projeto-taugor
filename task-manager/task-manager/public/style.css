@@ -15,11 +15,15 @@ html {
     --warning: #FFD400;
     --danger: #D31723;
     --backgrounds: #A4E1F8;
+    --backcards: #FFF399;
+   
 }
 
 body {
         
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 body, button, input, textarea {
@@ -54,9 +58,10 @@ input{
 }
 
 select {
-    font-size: 1.4rem;
+    /* font-size: clamp(14px, 1.6rem, 2vw); */
     outline: none;
     font-family: 'Poppins';
+    background-color: white;
 }
 
 

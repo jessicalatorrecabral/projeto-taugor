@@ -5,6 +5,7 @@ import {TopoPages, ContainerDescricao, ConteinerOpcoes, HeaderFormTarefa, Titulo
 import {ContainerEditarTarefa, ContainerBotoesEditar, ArquivoContainer} from './styled'
 import FooterPages from '../../components/FooterPages/FooterPages'
 import arquivoIcone from '../../images/anexo.png'
+import { ToastContainer, toast } from 'react-toast'
 
 
 
@@ -43,11 +44,11 @@ const EditarTarefas = (props) => {
             responsavel: responsavel
         })
         .then(() => {
-            alert('Tarefa editada com sucesso!')
-            voltarParaHome()
+            toast.success('Tarefa editada com sucesso!')
+            // voltarParaHome()
         })
         .catch((error) => {
-            alert('Algo deu errado')
+            toast.error('Algo deu errado')
         })
           
     }
@@ -119,18 +120,21 @@ const EditarTarefas = (props) => {
                     <label>Responsável:</label>
                     <input value={responsavel} onChange={e => setResponsavel(e.target.value) }/>
 
+                    {tarefaSelecionada.arquivo &&
                    <ArquivoContainer>
                         <a href={tarefaSelecionada.arquivo} target={'_blank'}>
                             <img src={arquivoIcone}/> arquivo
                         </a>
-                   </ArquivoContainer>
+                   </ArquivoContainer>}
                 
                     <ContainerBotoesEditar>
                         <button type={'submit'}>Salvar alterações</button>
                         <button onClick={voltarParaHome} type={'button'}>cancelar</button>
                     </ContainerBotoesEditar> 
                 </form>
+                <ToastContainer/>
             </ContainerEditarTarefa>
+            
             <FooterPages/>
         </div>
     )

@@ -5,11 +5,16 @@ export const CardWrapper = styled.div`
     flex-direction: column;
     padding: .8rem;
     border: solid grey .1rem;
-    background-color: #FFF399;
+    background-color: var(--backcards);
 
     span{
         color: grey;
         font-style: italic;
+    }
+
+    @media(max-width: 800px){
+        
+        width: 100%;
     }
 `
 
@@ -68,14 +73,24 @@ export const BotoesContainer = styled.div`
         padding: .4rem;
         color: white;
         font-size: 1.3rem;
+
+        @media(max-width: 1080px){
+            font-size: 1.2rem;
+            width: 9rem;
+        }
     }
 
     button:nth-child(1){
         background-color: var(--danger);
+
+        @media(max-width: 1080px){
+            margin-right: 1.2rem;
+        }
     }
     button:nth-child(2){
         background-color: var(--success);
     }
+
 
    
 `

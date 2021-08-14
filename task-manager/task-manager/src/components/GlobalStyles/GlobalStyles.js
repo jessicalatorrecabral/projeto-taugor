@@ -13,15 +13,32 @@ export const TopoPages = styled.header`
     display: flex;
     justify-content: space-between;
     padding: 2rem;
-    background-color: #A4E1F8;
+    background-color: var(--backgrounds);
 
-    button{
+    button {
         background-color: var(--danger);
         padding: .5rem;
         color: white;
         width: 8rem;
+
+        @media(max-width: 800px){
+            width: 6rem;
+            
+            height: 4rem;
+            
+        }
         
     }
+
+    
+        @media(max-width: 800px){
+            font-size: 1rem;
+            justify-content: space-around;
+        }
+
+    
+
+    
 `
 export const TaskContainer = styled.div`
     background-color: white;
@@ -38,6 +55,21 @@ export const TaskContainer = styled.div`
     }
     input{
         width: 80%;
+    }
+    
+    button{
+
+        @media(max-width: 800px){
+            font-size: 1.1rem;
+           
+        }
+    }
+    @media(max-width: 1080px){
+        
+        width: 90%;
+        
+        
+        
     }
 
    
@@ -58,6 +90,25 @@ export const ConteinerOpcoes = styled.div`
     justify-content: space-around;
     margin: 1rem auto;
     padding: .8rem;
+    border-bottom: gray solid .1rem;
+
+    @media(max-width: 1080px){
+      
+        flex-direction: column;
+        margin: 2rem auto;
+      
+
+        
+    }
+    select:nth-child(2){
+
+        @media(max-width: 800px){
+            margin-bottom: 1.1rem;
+            
+
+        }
+
+    }
     
    
       
@@ -65,15 +116,26 @@ export const ConteinerOpcoes = styled.div`
 export const ContainerDescricao = styled.div`
    
     display: flex;
-    
     justify-content: space-around;
     
-    textarea{
+    textarea {
         border: gray solid .1rem;
         outline: none;
+        
+        @media(max-width: 1080px){
+            height: 5rem;
+        }
     }
     label{
         align-self: flex-start;
+    }
+    
+    @media(max-width: 1080px){
+        
+        flex-direction: column;
+        
+        margin: 2rem auto;
+        
     }
 `
 
@@ -99,6 +161,7 @@ export const FooterPage = styled.footer`
     background-color: var(--backgrounds);
     margin-top: 5rem;
     
+    
 
     div:nth-child(1){
         padding: 2rem;
@@ -106,7 +169,6 @@ export const FooterPage = styled.footer`
         font-style: italic;
     }
     div:nth-child(2){
-        
         
         margin: 4rem;
         display:flex;
@@ -129,7 +191,12 @@ export const FooterPage = styled.footer`
             
             max-width: 2.4rem;
         }
+        @media(max-width: 800px){
+           
+            text-align: center;
+        }
 
     }
 
+   
 `

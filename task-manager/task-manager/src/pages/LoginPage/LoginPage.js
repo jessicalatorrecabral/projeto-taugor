@@ -4,7 +4,11 @@ import firebase from 'firebase/app'
 import { useHistory } from 'react-router-dom'
 import { Titulo, SubTitulo } from '../../components/GlobalStyles/GlobalStyles'
 
+
+
+
 const LoginPage = (props) => {
+
 
     const[emailValue, setEmailValue] = useState("")
     const[passwordValue, setPasswordValue] = useState("")
@@ -37,7 +41,7 @@ const LoginPage = (props) => {
                 alert('Bem-vindo(a)')
             
         }).catch((error) => {
-            alert('Algo deu errado')
+          alert('Algo deu errado')
             
         })
     }
@@ -67,6 +71,7 @@ const LoginPage = (props) => {
                 <p>Não possui conta? Crie sua conta</p>
                 <button type={'button'} onClick={irParaPaginaDeCadastro}>Criar conta</button>
             </form>
+            
         </FormPageContainer>
     )
 }

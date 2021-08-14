@@ -12,17 +12,24 @@ import FiltroStatus from '../../components/FiltroStatus/FiltroStatus'
 import imgAdd from '../../images/adicionar.png'
 import { Titulo } from '../../components/GlobalStyles/GlobalStyles'
 import CardTarefas from '../../components/CardTarefas/CardTarefas'
+import { ToastContainer, toast } from 'react-toast'
 
 
 
 
 const HomePage = (props) => {
+
+    const customToast = () =>
+    toast('Tarefa deletada! ', {
+        backgroundColor: '#D31723',
+        color: '#ffffff',
+  })
     
     const[hasClicked, setHasClicked] = useState(false)
     const[tarefasDoUsuario, setTarefasDoUsuario] = useState()
     const[dadosDoUsuarioLogado, setDadosDoUsuarioLogado] = useState()
     const[tarefaExiste, setTarefaExiste]=useState(false)
-    const[status, setStatus]=useState() 
+    const[status, setStatus]=useState('') 
     const[descricao, setDescricao] = useState('')
 
     useEffect(()=> {
@@ -85,6 +92,7 @@ const HomePage = (props) => {
                 ...doc.data()
             } 
         })
+        
 
     setTarefasDoUsuario(listaDeTarefas)
     setTarefaExiste(true)
@@ -102,11 +110,11 @@ const HomePage = (props) => {
             firebase.firestore().collection('usuarios').doc(`${idUser}`)
             .collection('TarefasUsuario').doc(tarefa.id).delete()
             .then(() => {
-             alert('Tarefa deletada!')
+                customToast()
              pegarTarefaCriada()
 
          }).catch((error) => {
-             alert('ocorreu um erro, tente novamente')
+                toast.error('Ocorreu um erro, tente novamente')
          })
 
         }
@@ -124,13 +132,14 @@ const HomePage = (props) => {
     const filtrarPorStatus =  () => {
         const statusFiltrados =  tarefasDoUsuario.filter((tarefa) =>{
             
-                 return tarefa.status === status
-
-             
+                 if(tarefa.status === status){
+                     return true
+                 }
         })
         setTarefasDoUsuario(statusFiltrados)
         
-    }
+    } 
+    
 
     useEffect(()=>{
     
@@ -148,9 +157,11 @@ const HomePage = (props) => {
             </TopoPages>
 
             <FiltrosContainer>
-                <FiltroStatus onChangeStatus={onChangeStatus} 
-                    filtrarPorStatus={filtrarPorStatus} status={status}/>
-                    
+                
+                <FiltroStatus onChangeStatus={onChangeStatus} filtrarPorStatus={filtrarPorStatus}
+                    status={status}
+                   />
+               
                 <FiltroDescricao>
                     <BuscaDescricao placeholder={'🔎Buscar...'} type={'text'} value={descricao} onChange={onChangeDescricao}/>
                     <button onClick={filtrarPorDescricao}>ok</button>
@@ -182,6 +193,7 @@ const HomePage = (props) => {
                 })}
             </GridTarefas>
            <FooterPages/>
+           <ToastContainer/>
         </HomePageContainer>
     )
 }

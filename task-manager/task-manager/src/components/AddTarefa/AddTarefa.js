@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import firebase from 'firebase/app'
-import { 
-         FecharModal, 
-        MainContainer } from './styled'
+import { FecharModal, MainContainer } from './styled'
 import {TaskContainer, HeaderFormTarefa, ConteinerOpcoes, ContainerDescricao, ButtonsContainer } from '../GlobalStyles/GlobalStyles'
 
 import imgFechar from '../../images/fechar.png'
@@ -23,6 +21,7 @@ const AddTarefa = (props) => {
             props.setHasClicked(false)
         }
     }
+    
 
     useEffect(()=>{
         fecharModal()
@@ -120,10 +119,11 @@ const AddTarefa = (props) => {
                             <option value="Concluída">Concluída</option>
                             <option value="Cancelada">Cancelada</option>
                         </select>
-                        <p>Responsável: {props.usuarioLogado && 
-                        props.usuarioLogado.email}</p>
+                       
 
                     </ConteinerOpcoes>
+                    <p>Responsável: {props.usuarioLogado && 
+                        props.usuarioLogado.email}</p>
                     <ContainerDescricao>
                         <label>Descrição da tarefa:</label>
                         <textarea type={'text'} rows="8" required cols="60" value={descricao}  onChange={onChangeDescricao} placeholder={'Descrição da sua atividade'}/>

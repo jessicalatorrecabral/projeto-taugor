@@ -1,12 +1,25 @@
 import React from 'react'
 import styled from "styled-components";
 
-export const FiltroStatusContainer = styled.div`
+  const FiltroStatusContainer = styled.div`
     display: flex;
-    width: 20%;
+    width: 40%;
+    
     align-items: center;
-    justify-content: space-around;  
-`
+    justify-content: space-around;
+
+    @media(max-width: 800px){
+        
+        width: 100%;
+        margin: .6rem auto;
+        padding: .6rem;
+        
+        
+    }
+      
+` 
+
+
 
 
 const FiltroStatus = (props) => {
@@ -15,15 +28,15 @@ const FiltroStatus = (props) => {
         <FiltroStatusContainer>
             <label>Mostrar:</label>
             <select value={props.status} onChange={props.onChangeStatus} >
-                <option >Selecione</option>
-                <option>Pendente</option>
-                <option>Em andamento</option>
-                <option>Concluída</option>
-                <option>Cancelada</option>
+                <option value={'Todas'}>Todas</option>
+                <option value={'Pendente'}>Pendente</option>
+                <option value={'Em andamento'}>Em andamento</option>
+                <option value={'Concluída'}>Concluída</option>
+                <option value={'Cancelada'}>Cancelada</option>
             </select>
 
            
-            <button onClick={props.filtrarPorStatus}> ok </button>
+            <button onClick={props.filtrarPorStatus}> ok </button> 
         </FiltroStatusContainer>
     )
 }

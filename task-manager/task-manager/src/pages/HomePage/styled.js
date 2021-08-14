@@ -3,15 +3,16 @@ import styled from "styled-components";
 export const HomePageContainer = styled.div`
     display: flex;
     flex-direction: column;
-   
 `
 export const FiltrosContainer = styled.div`
     display: flex;
+    align-self: center;
     align-items: center;
     margin: 2rem;
     padding: .8rem;
     justify-content: space-around;
     border-bottom: gray solid .1rem;
+    width: 90%;
 
     button{
         width: 5rem;
@@ -19,19 +20,31 @@ export const FiltrosContainer = styled.div`
         background-color: var(--success);
         color: white;
     }
+
+    @media(max-width: 800px){
+        flex-direction: column;
+    }
 `
+
+
 export const FiltroDescricao = styled.div`
    
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 40%;
+    justify-content: space-evenly;
+    width: 45%;
+
+    @media(max-width:800px){
+        
+        width: 100%;
+    }
 `
+
 
 export const BuscaDescricao = styled.input`
     border: solid gray .1rem;
     height: 4rem;
-    width: 80%;
+    min-width: 70%;
     margin-top: 1rem;
 `
 export const CabecalhoContainer = styled.div`
@@ -42,14 +55,29 @@ export const CabecalhoContainer = styled.div`
     padding: .5rem;
     align-items: center;
     justify-content: space-evenly;
+
+
+    @media(max-width:800px){
+        
+        flex-direction: column;
+        padding: .9rem;
+    }
 `
 
 export const BotaoAdicionarTarefa = styled.button`
     width: 20%;
     background-color: var(--info);
     color: white;
+
     img{
         margin-right: .6rem;
+    }
+
+    @media(max-width:1080px){
+        
+        width: 100%;
+        margin-top: 1.6rem;
+
     }
 `
 
@@ -65,5 +93,13 @@ export const GridTarefas = styled.div`
 
     height: 90vh;
     overflow-y: scroll;
+
+    @media(max-width:800px){
+        
+        overflow-x: scroll;
+        display: flex;
+        height: 70vh;
+        width: 90%;
+    }
       
 `
