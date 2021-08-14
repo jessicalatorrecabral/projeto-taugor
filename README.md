@@ -13,9 +13,10 @@
 <li>Fazer filtragens por <i>status</i> e por descrição da atividade</li>
 <li>Deletar uma tarefa</li>
 <li>Fazer login com Google</li>
+<li>Responsivo (testado em: Galaxy J5 Prime, iPhone 6/7/8/Plus)</li>
 
 <h3>Status do projeto: 🚧 Em desenvolvimento! </h3>
-<p>O projeto frequentemente pasará por ajustes, como por exemplo, responsividade.</p>
+<p>O projeto frequentemente pasará por ajustes.</p>
 
 
 <h4>Para acessar o Task Manager entre <a href='https://task-manager-4d9dd.web.app' target='_blank'/>aqui</h4>
