@@ -5,15 +5,16 @@
 <li>Javascript</li>
 <li>React</li>
 <li>Firebase</li>
+<li>react-toast ➡ https://github.com/moharnadreza/react-toast</li>
 
 <h3>Funcionalidades:</h3>
-<li>Criar tarefas</li>
-<li>Anexar arquivos de imagem e pdf às tarefas</li>
-<li>Editar os campos de <i>status</i> e responsável pela atividade</li>
-<li>Fazer filtragens por <i>status</i> e por descrição da atividade</li>
-<li>Deletar uma tarefa</li>
-<li>Fazer login com Google</li>
-<li>Responsivo (testado em: Galaxy J5 Prime, iPhone 6/7/8/Plus)</li>
+ <li>✔Criar tarefas</li>
+<li>✔Anexar arquivos de imagem e pdf às tarefas</li>
+<li>✔Editar os campos de <i>status</i> e responsável pela atividade</li>
+<li>✔Fazer filtragens por <i>status</i> e por descrição da atividade</li>
+<li>✔Deletar uma tarefa</li>
+<li>✔Fazer login com Google</li>
+<li>✔Responsivo (testado em: Galaxy J5 Prime, iPhone 6/7/8/Plus)</li>
 
 <h3>Status do projeto: 🚧 Em desenvolvimento! </h3>
 <p>O projeto frequentemente pasará por ajustes.</p>
