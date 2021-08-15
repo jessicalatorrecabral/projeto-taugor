@@ -57,6 +57,10 @@ const HomePage = (props) => {
         }
 
     }
+    
+
+       
+    
 
     useEffect(()=>{
         abrirModal()
@@ -72,7 +76,7 @@ const HomePage = (props) => {
             setDadosDoUsuarioLogado(doc.data())
             
         })
-        
+       
     },[])
 
     const idUser = props.usuarioLogado?.uid
@@ -96,6 +100,7 @@ const HomePage = (props) => {
 
     setTarefasDoUsuario(listaDeTarefas)
     setTarefaExiste(true)
+    console.log(props.usuarioLogado)
         
     }
 
@@ -169,7 +174,7 @@ const HomePage = (props) => {
                 
             </FiltrosContainer>
 
-            
+             
             <CabecalhoContainer>
                 <Titulo>Quadro de atividades</Titulo>
 
@@ -181,17 +186,18 @@ const HomePage = (props) => {
                     <AddTarefa setHasClicked={setHasClicked} 
                     dadosDoUsuarioLogado={dadosDoUsuarioLogado}
                     usuarioLogado={props.usuarioLogado} 
-                    pegarTarefaCriada={pegarTarefaCriada}/>}
+                    pegarTarefaCriada={pegarTarefaCriada}
+                    />}
             </CabecalhoContainer> 
             
-              
+            {tarefasDoUsuario ?
             <GridTarefas>
                 
                 {tarefaExiste && tarefasDoUsuario.map((tarefa)=>{
-                    return <CardTarefas tarefa={tarefa} excluirTarefa={excluirTarefa} irParaPaginaDeEdicao={irParaPaginaDeEdicao}/>
+                    return <CardTarefas key={tarefa.id} tarefa={tarefa} excluirTarefa={excluirTarefa} irParaPaginaDeEdicao={irParaPaginaDeEdicao}/>
                     
                 })}
-            </GridTarefas>
+            </GridTarefas> : <p>não há tarefas por aqui 💤</p>}
            <FooterPages/>
            <ToastContainer/>
         </HomePageContainer>

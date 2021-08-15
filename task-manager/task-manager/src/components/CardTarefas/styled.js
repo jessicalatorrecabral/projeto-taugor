@@ -5,8 +5,15 @@ export const CardWrapper = styled.div`
     flex-direction: column;
     padding: .8rem;
     border: solid grey .1rem;
-    background-color: var(--backcards);
-
+    ${props => {if(props.statusTarefa === 'Concluída'){
+        return 'background-color: #AAE780;'
+    }else if(props.statusTarefa === 'Cancelada'){
+        return 'background-color: #F19D6D;'
+    } else {
+        return 'background-color: var(--backcards);'
+    }
+    }}
+    
     span{
         color: grey;
         font-style: italic;
@@ -15,13 +22,20 @@ export const CardWrapper = styled.div`
     @media(max-width: 800px){
         
         width: 100%;
+        
     }
+   
 `
 
 export const TopoCard = styled.header`
     padding: .6rem;
     margin-bottom: .5rem;
     border-bottom: grey solid .1rem;
+    
+    p {
+        text-decoration: ${props => props.statusTarefa === 'Concluída' ? "line-through" : "none"}
+    }
+    
 
 `
 
@@ -33,6 +47,7 @@ export const ConteudoCard = styled.section`
     padding: .6rem;
     margin-bottom: .8rem;
     justify-content: space-around;
+
 `
 export const ConteudoCardDescricao = styled.section`
 border-bottom: grey solid .1rem;
@@ -43,6 +58,10 @@ border-bottom: grey solid .1rem;
     flex-grow: 1;
     flex-direction: column;
     text-align: justify;
+
+    p {
+        text-decoration: ${props => props.statusTarefa === 'Concluída' ? "line-through" : "none"}
+    }
 `
 export const ArquivoContainer = styled.div`
     
@@ -73,6 +92,7 @@ export const BotoesContainer = styled.div`
         padding: .4rem;
         color: white;
         font-size: 1.3rem;
+        width: 40%;
 
         @media(max-width: 1080px){
             font-size: 1.2rem;

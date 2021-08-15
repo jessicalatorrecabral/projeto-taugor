@@ -46,7 +46,6 @@ export const TaskContainer = styled.div`
     flex-direction: column;
     width: 60%;
     margin: auto;
-    
     padding: .8rem;
 
     form{
@@ -56,21 +55,22 @@ export const TaskContainer = styled.div`
     input{
         width: 80%;
     }
-    
-    button{
-
-        @media(max-width: 800px){
-            font-size: 1.1rem;
-           
-        }
+    p{
+        text-align: center;
+        margin-top: 1rem;
     }
+   
     @media(max-width: 1080px){
         
         width: 90%;
+       
+        border: solid green .1rem;
+     
         
         
         
     }
+    
 
    
     
@@ -82,20 +82,21 @@ export const HeaderFormTarefa = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: .8rem;
+
 `
 
 export const ConteinerOpcoes = styled.div`
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: space-around;
-    margin: 1rem auto;
+    margin: 3rem auto;
     padding: .8rem;
-    border-bottom: gray solid .1rem;
+    
 
     @media(max-width: 1080px){
-      
         flex-direction: column;
-        margin: 2rem auto;
+        
+        margin: 0 auto;
       
 
         
@@ -104,6 +105,7 @@ export const ConteinerOpcoes = styled.div`
 
         @media(max-width: 800px){
             margin-bottom: 1.1rem;
+            
             
 
         }
@@ -146,12 +148,22 @@ export const ButtonsContainer = styled.div`
     margin: 2rem auto;
     display: flex;
     justify-content: space-around;
+    
 
     button {
         color: white;
         background-color: var(--primary);
         padding: .8rem;
         width: 80%;
+
+        @media(max-width: 800px){
+            font-size: 1.1rem;
+            margin-bottom: .9rem;
+            
+            
+            
+           
+        }
     }
 `
 

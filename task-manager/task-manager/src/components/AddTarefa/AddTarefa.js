@@ -62,6 +62,7 @@ const AddTarefa = (props) => {
     const criarTarefa = async (hasClosed) =>{
 
         fecharModal(hasClosed)
+        
          
 
         const urlArquivo = await enviarArquivoEpegarUrl()
@@ -122,14 +123,14 @@ const AddTarefa = (props) => {
                        
 
                     </ConteinerOpcoes>
-                    <p>Responsável: {props.usuarioLogado && 
-                        props.usuarioLogado.email}</p>
+                    
                     <ContainerDescricao>
                         <label>Descrição da tarefa:</label>
-                        <textarea type={'text'} rows="8" required cols="60" value={descricao}  onChange={onChangeDescricao} placeholder={'Descrição da sua atividade'}/>
+                        <textarea type={'text'} rows="4" required cols="40" value={descricao}  onChange={onChangeDescricao} placeholder={'Descrição da sua atividade'}/>
 
                     </ContainerDescricao>
-                    
+                    <p>Responsável: {props.usuarioLogado && 
+                        props.usuarioLogado.email}</p>
                         <label>Anexar arquivo:</label>
                         <input type={'file'} ref={fileInputRef} accept={'application/*,image/*'}/>
 
