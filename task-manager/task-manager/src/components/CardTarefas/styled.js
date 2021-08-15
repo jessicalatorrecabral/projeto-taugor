@@ -4,11 +4,11 @@ export const CardWrapper = styled.div`
     display: flex;
     flex-direction: column;
     padding: .8rem;
-    border: solid grey .1rem;
+    
     ${props => {if(props.statusTarefa === 'Concluída'){
-        return 'background-color: #AAE780;'
+        return 'background-color: var(--concluida);'
     }else if(props.statusTarefa === 'Cancelada'){
-        return 'background-color: #F19D6D;'
+        return 'background-color: var(--cancelada);'
     } else {
         return 'background-color: var(--backcards);'
     }
